@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/zlang/Final_Project_Complete/CPU_TB_isim_beh.exe" -prj "C:/Users/zlang/Final_Project_Complete/CPU_TB_beh.prj" "work.CPU_TB" 

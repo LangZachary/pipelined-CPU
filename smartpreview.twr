@@ -1,0 +1,1021 @@
+
+================================================================================
+Timing constraint: Autotimespec constraint for clock net clk_BUFGP
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 1259866627 paths analyzed, 2014 endpoints analyzed, 32 failing endpoints
+ 32 timing errors detected. (32 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  37.029ns.
+--------------------------------------------------------------------------------
+Slack:                  -0.701 (requirement - (data path - clock path skew + uncertainty))
+  Source:               u2/instruction_3_13 (FF)
+  Destination:          u2/NPC_8 (FF)
+  Requirement:          17.813
+  Data Path Delay:      18.514 (Levels of Logic = 23)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP falling at 17.813ns
+  Clock Uncertainty:    0.000
+
+  Maximum Data Path: u2/instruction_3_13 to u2/NPC_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X69Y76.XQ      Tcko                  0.514   u2/instruction_3_13
+                                                       u2/instruction_3_13
+    SLICE_X66Y78.G2      net (fanout=20)       0.635   u2/instruction_3_13
+    SLICE_X66Y78.Y       Tilo                  0.660   u2/PC_cmp_eq0010
+                                                       u2/PC_cmp_eq00101_SW0
+    SLICE_X66Y78.F4      net (fanout=1)        0.020   u2/PC_cmp_eq00101_SW0/O
+    SLICE_X66Y78.X       Tilo                  0.660   u2/PC_cmp_eq0010
+                                                       u2/PC_cmp_eq00101
+    SLICE_X67Y82.G4      net (fanout=8)        0.527   u2/PC_cmp_eq0010
+    SLICE_X67Y82.Y       Tilo                  0.612   u2/PC_mux0005<16>1122
+                                                       u2/PC_or00001
+    SLICE_X69Y84.F3      net (fanout=107)      0.731   u2/PC_or0000
+    SLICE_X69Y84.COUT    Topcyf                1.011   u2/PC_share0002<3>
+                                                       u2/Madd_PC_share0002_lut<3>
+                                                       u2/Madd_PC_share0002_cy<3>
+                                                       u2/Madd_PC_share0002_cy<4>
+    SLICE_X69Y85.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0002_cy<4>
+    SLICE_X69Y85.COUT    Tbyp                  0.103   u2/PC_share0002<5>
+                                                       u2/Madd_PC_share0002_cy<5>
+                                                       u2/Madd_PC_share0002_cy<6>
+    SLICE_X69Y86.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0002_cy<6>
+    SLICE_X69Y86.COUT    Tbyp                  0.103   u2/PC_share0002<7>
+                                                       u2/Madd_PC_share0002_cy<7>
+                                                       u2/Madd_PC_share0002_cy<8>
+    SLICE_X69Y87.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0002_cy<8>
+    SLICE_X69Y87.COUT    Tbyp                  0.103   u2/PC_share0002<9>
+                                                       u2/Madd_PC_share0002_cy<9>
+                                                       u2/Madd_PC_share0002_cy<10>
+    SLICE_X69Y88.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0002_cy<10>
+    SLICE_X69Y88.Y       Tciny                 0.756   u2/PC_share0002<11>
+                                                       u2/Madd_PC_share0002_cy<11>
+                                                       u2/Madd_PC_share0002_xor<12>
+    SLICE_X63Y82.F4      net (fanout=1)        0.745   u2/PC_share0002<12>
+    SLICE_X63Y82.X       Tilo                  0.612   u2/PC_mux0005<12>
+                                                       u2/PC_mux0005<12>59
+    SLICE_X67Y94.F2      net (fanout=1)        0.649   u2/PC_mux0005<12>
+    SLICE_X67Y94.COUT    Topcyf                1.011   u2/PC_share0001<12>
+                                                       u2/Madd_PC_share0001_lut<12>
+                                                       u2/Madd_PC_share0001_cy<12>
+                                                       u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.Y       Tciny                 0.756   u2/PC_share0001<14>
+                                                       u2/Madd_PC_share0001_cy<14>
+                                                       u2/Madd_PC_share0001_xor<15>
+    SLICE_X66Y98.F1      net (fanout=2)        0.329   u2/PC_share0001<15>
+    SLICE_X66Y98.X       Tilo                  0.660   u2/PC_mux0002<15>
+                                                       u2/PC_mux0002<15>31
+    SLICE_X64Y99.BY      net (fanout=1)        0.384   u2/PC_mux0002<15>
+    SLICE_X64Y99.COUT    Tbycy                 0.823   u2/PC_share0000<14>
+                                                       u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.COUT   Tbyp                  0.113   u2/PC_share0000<16>
+                                                       u2/Maddsub_PC_share0000_cy<16>
+                                                       u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.COUT   Tbyp                  0.113   u2/PC_share0000<18>
+                                                       u2/Maddsub_PC_share0000_cy<18>
+                                                       u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.COUT   Tbyp                  0.113   u2/PC_share0000<20>
+                                                       u2/Maddsub_PC_share0000_cy<20>
+                                                       u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.COUT   Tbyp                  0.113   u2/PC_share0000<22>
+                                                       u2/Maddsub_PC_share0000_cy<22>
+                                                       u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.COUT   Tbyp                  0.113   u2/PC_share0000<24>
+                                                       u2/Maddsub_PC_share0000_cy<24>
+                                                       u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.Y      Tciny                 0.768   u2/PC_share0000<26>
+                                                       u2/Maddsub_PC_share0000_cy<26>
+                                                       u2/Maddsub_PC_share0000_xor<27>
+    SLICE_X67Y105.G4     net (fanout=2)        0.314   u2/PC_share0000<27>
+    SLICE_X67Y105.Y      Tilo                  0.612   u2/PC<27>
+                                                       u2/PC_mux0000<27>
+    SLICE_X65Y105.F1     net (fanout=2)        0.438   u2/PC_mux0000<27>
+    SLICE_X65Y105.COUT   Topcyf                1.011   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+                                                       u2/Mcompar_NPC_cmp_lt0000_lut<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.CIN    net (fanout=1)        0.000   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.XB     Tcinxb                0.352   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X60Y105.G3     net (fanout=32)       1.274   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X60Y105.CLK    Tgck                  0.776   u2/NPC<9>
+                                                       u2/Mmux_NPC_mux0013311
+                                                       u2/NPC_8
+    -------------------------------------------------  ---------------------------
+
+--------------------------------------------------------------------------------
+Slack:                  -0.697 (requirement - (data path - clock path skew + uncertainty))
+  Source:               u2/instruction_3_13 (FF)
+  Destination:          u2/NPC_4 (FF)
+  Requirement:          17.813
+  Data Path Delay:      18.510 (Levels of Logic = 23)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP falling at 17.813ns
+  Clock Uncertainty:    0.000
+
+  Maximum Data Path: u2/instruction_3_13 to u2/NPC_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X69Y76.XQ      Tcko                  0.514   u2/instruction_3_13
+                                                       u2/instruction_3_13
+    SLICE_X66Y78.G2      net (fanout=20)       0.635   u2/instruction_3_13
+    SLICE_X66Y78.Y       Tilo                  0.660   u2/PC_cmp_eq0010
+                                                       u2/PC_cmp_eq00101_SW0
+    SLICE_X66Y78.F4      net (fanout=1)        0.020   u2/PC_cmp_eq00101_SW0/O
+    SLICE_X66Y78.X       Tilo                  0.660   u2/PC_cmp_eq0010
+                                                       u2/PC_cmp_eq00101
+    SLICE_X67Y82.G4      net (fanout=8)        0.527   u2/PC_cmp_eq0010
+    SLICE_X67Y82.Y       Tilo                  0.612   u2/PC_mux0005<16>1122
+                                                       u2/PC_or00001
+    SLICE_X69Y84.F3      net (fanout=107)      0.731   u2/PC_or0000
+    SLICE_X69Y84.COUT    Topcyf                1.011   u2/PC_share0002<3>
+                                                       u2/Madd_PC_share0002_lut<3>
+                                                       u2/Madd_PC_share0002_cy<3>
+                                                       u2/Madd_PC_share0002_cy<4>
+    SLICE_X69Y85.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0002_cy<4>
+    SLICE_X69Y85.COUT    Tbyp                  0.103   u2/PC_share0002<5>
+                                                       u2/Madd_PC_share0002_cy<5>
+                                                       u2/Madd_PC_share0002_cy<6>
+    SLICE_X69Y86.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0002_cy<6>
+    SLICE_X69Y86.COUT    Tbyp                  0.103   u2/PC_share0002<7>
+                                                       u2/Madd_PC_share0002_cy<7>
+                                                       u2/Madd_PC_share0002_cy<8>
+    SLICE_X69Y87.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0002_cy<8>
+    SLICE_X69Y87.COUT    Tbyp                  0.103   u2/PC_share0002<9>
+                                                       u2/Madd_PC_share0002_cy<9>
+                                                       u2/Madd_PC_share0002_cy<10>
+    SLICE_X69Y88.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0002_cy<10>
+    SLICE_X69Y88.Y       Tciny                 0.756   u2/PC_share0002<11>
+                                                       u2/Madd_PC_share0002_cy<11>
+                                                       u2/Madd_PC_share0002_xor<12>
+    SLICE_X63Y82.F4      net (fanout=1)        0.745   u2/PC_share0002<12>
+    SLICE_X63Y82.X       Tilo                  0.612   u2/PC_mux0005<12>
+                                                       u2/PC_mux0005<12>59
+    SLICE_X67Y94.F2      net (fanout=1)        0.649   u2/PC_mux0005<12>
+    SLICE_X67Y94.COUT    Topcyf                1.011   u2/PC_share0001<12>
+                                                       u2/Madd_PC_share0001_lut<12>
+                                                       u2/Madd_PC_share0001_cy<12>
+                                                       u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.Y       Tciny                 0.756   u2/PC_share0001<14>
+                                                       u2/Madd_PC_share0001_cy<14>
+                                                       u2/Madd_PC_share0001_xor<15>
+    SLICE_X66Y98.F1      net (fanout=2)        0.329   u2/PC_share0001<15>
+    SLICE_X66Y98.X       Tilo                  0.660   u2/PC_mux0002<15>
+                                                       u2/PC_mux0002<15>31
+    SLICE_X64Y99.BY      net (fanout=1)        0.384   u2/PC_mux0002<15>
+    SLICE_X64Y99.COUT    Tbycy                 0.823   u2/PC_share0000<14>
+                                                       u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.COUT   Tbyp                  0.113   u2/PC_share0000<16>
+                                                       u2/Maddsub_PC_share0000_cy<16>
+                                                       u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.COUT   Tbyp                  0.113   u2/PC_share0000<18>
+                                                       u2/Maddsub_PC_share0000_cy<18>
+                                                       u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.COUT   Tbyp                  0.113   u2/PC_share0000<20>
+                                                       u2/Maddsub_PC_share0000_cy<20>
+                                                       u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.COUT   Tbyp                  0.113   u2/PC_share0000<22>
+                                                       u2/Maddsub_PC_share0000_cy<22>
+                                                       u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.COUT   Tbyp                  0.113   u2/PC_share0000<24>
+                                                       u2/Maddsub_PC_share0000_cy<24>
+                                                       u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.Y      Tciny                 0.768   u2/PC_share0000<26>
+                                                       u2/Maddsub_PC_share0000_cy<26>
+                                                       u2/Maddsub_PC_share0000_xor<27>
+    SLICE_X67Y105.G4     net (fanout=2)        0.314   u2/PC_share0000<27>
+    SLICE_X67Y105.Y      Tilo                  0.612   u2/PC<27>
+                                                       u2/PC_mux0000<27>
+    SLICE_X65Y105.F1     net (fanout=2)        0.438   u2/PC_mux0000<27>
+    SLICE_X65Y105.COUT   Topcyf                1.011   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+                                                       u2/Mcompar_NPC_cmp_lt0000_lut<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.CIN    net (fanout=1)        0.000   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.XB     Tcinxb                0.352   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X61Y105.G4     net (fanout=32)       1.318   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X61Y105.CLK    Tgck                  0.728   u2/NPC<5>
+                                                       u2/Mmux_NPC_mux0013271
+                                                       u2/NPC_4
+    -------------------------------------------------  ---------------------------
+
+--------------------------------------------------------------------------------
+Slack:                  -0.697 (requirement - (data path - clock path skew + uncertainty))
+  Source:               u2/instruction_3_14 (FF)
+  Destination:          u2/NPC_8 (FF)
+  Requirement:          17.813
+  Data Path Delay:      18.510 (Levels of Logic = 21)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP falling at 17.813ns
+  Clock Uncertainty:    0.000
+
+  Maximum Data Path: u2/instruction_3_14 to u2/NPC_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X67Y78.YQ      Tcko                  0.511   u2/instruction_3_15
+                                                       u2/instruction_3_14
+    SLICE_X68Y78.F1      net (fanout=19)       0.882   u2/instruction_3_14
+    SLICE_X68Y78.X       Tif5x                 1.000   u2/alu_in1_or0000
+                                                       u2/PC_or000421
+                                                       u2/PC_or00042_f5
+    SLICE_X65Y80.G4      net (fanout=18)       0.497   u2/alu_in1_or0000
+    SLICE_X65Y80.Y       Tilo                  0.612   N2
+                                                       u2/OUTPUT_and00031
+    SLICE_X64Y85.G1      net (fanout=75)       1.048   u2/OUTPUT_and0003
+    SLICE_X64Y85.X       Tif5x                 1.000   u2/PC_mux0005<9>28
+                                                       u2/PC_mux0005<9>282
+                                                       u2/PC_mux0005<9>28_f5
+    SLICE_X65Y86.BX      net (fanout=2)        0.610   u2/PC_mux0005<9>28
+    SLICE_X65Y86.X       Tbxx                  0.641   N323
+                                                       u2/PC_mux0005<9>37_SW1
+    SLICE_X66Y87.F4      net (fanout=1)        0.298   N323
+    SLICE_X66Y87.X       Tilo                  0.660   u2/PC_mux0005<9>
+                                                       u2/PC_mux0005<9>59
+    SLICE_X67Y92.G2      net (fanout=1)        0.612   u2/PC_mux0005<9>
+    SLICE_X67Y92.COUT    Topcyg                0.871   u2/PC_share0001<8>
+                                                       u2/Madd_PC_share0001_lut<9>
+                                                       u2/Madd_PC_share0001_cy<9>
+    SLICE_X67Y93.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<9>
+    SLICE_X67Y93.COUT    Tbyp                  0.103   u2/PC_share0001<10>
+                                                       u2/Madd_PC_share0001_cy<10>
+                                                       u2/Madd_PC_share0001_cy<11>
+    SLICE_X67Y94.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<11>
+    SLICE_X67Y94.COUT    Tbyp                  0.103   u2/PC_share0001<12>
+                                                       u2/Madd_PC_share0001_cy<12>
+                                                       u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.Y       Tciny                 0.756   u2/PC_share0001<14>
+                                                       u2/Madd_PC_share0001_cy<14>
+                                                       u2/Madd_PC_share0001_xor<15>
+    SLICE_X66Y98.F1      net (fanout=2)        0.329   u2/PC_share0001<15>
+    SLICE_X66Y98.X       Tilo                  0.660   u2/PC_mux0002<15>
+                                                       u2/PC_mux0002<15>31
+    SLICE_X64Y99.BY      net (fanout=1)        0.384   u2/PC_mux0002<15>
+    SLICE_X64Y99.COUT    Tbycy                 0.823   u2/PC_share0000<14>
+                                                       u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.COUT   Tbyp                  0.113   u2/PC_share0000<16>
+                                                       u2/Maddsub_PC_share0000_cy<16>
+                                                       u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.COUT   Tbyp                  0.113   u2/PC_share0000<18>
+                                                       u2/Maddsub_PC_share0000_cy<18>
+                                                       u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.COUT   Tbyp                  0.113   u2/PC_share0000<20>
+                                                       u2/Maddsub_PC_share0000_cy<20>
+                                                       u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.COUT   Tbyp                  0.113   u2/PC_share0000<22>
+                                                       u2/Maddsub_PC_share0000_cy<22>
+                                                       u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.COUT   Tbyp                  0.113   u2/PC_share0000<24>
+                                                       u2/Maddsub_PC_share0000_cy<24>
+                                                       u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.Y      Tciny                 0.768   u2/PC_share0000<26>
+                                                       u2/Maddsub_PC_share0000_cy<26>
+                                                       u2/Maddsub_PC_share0000_xor<27>
+    SLICE_X67Y105.G4     net (fanout=2)        0.314   u2/PC_share0000<27>
+    SLICE_X67Y105.Y      Tilo                  0.612   u2/PC<27>
+                                                       u2/PC_mux0000<27>
+    SLICE_X65Y105.F1     net (fanout=2)        0.438   u2/PC_mux0000<27>
+    SLICE_X65Y105.COUT   Topcyf                1.011   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+                                                       u2/Mcompar_NPC_cmp_lt0000_lut<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.CIN    net (fanout=1)        0.000   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.XB     Tcinxb                0.352   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X60Y105.G3     net (fanout=32)       1.274   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X60Y105.CLK    Tgck                  0.776   u2/NPC<9>
+                                                       u2/Mmux_NPC_mux0013311
+                                                       u2/NPC_8
+    -------------------------------------------------  ---------------------------
+
+--------------------------------------------------------------------------------
+Slack:                  -0.697 (requirement - (data path - clock path skew + uncertainty))
+  Source:               u2/instruction_3_13 (FF)
+  Destination:          u2/NPC_18 (FF)
+  Requirement:          17.813
+  Data Path Delay:      18.510 (Levels of Logic = 23)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP falling at 17.813ns
+  Clock Uncertainty:    0.000
+
+  Maximum Data Path: u2/instruction_3_13 to u2/NPC_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X69Y76.XQ      Tcko                  0.514   u2/instruction_3_13
+                                                       u2/instruction_3_13
+    SLICE_X66Y78.G2      net (fanout=20)       0.635   u2/instruction_3_13
+    SLICE_X66Y78.Y       Tilo                  0.660   u2/PC_cmp_eq0010
+                                                       u2/PC_cmp_eq00101_SW0
+    SLICE_X66Y78.F4      net (fanout=1)        0.020   u2/PC_cmp_eq00101_SW0/O
+    SLICE_X66Y78.X       Tilo                  0.660   u2/PC_cmp_eq0010
+                                                       u2/PC_cmp_eq00101
+    SLICE_X67Y82.G4      net (fanout=8)        0.527   u2/PC_cmp_eq0010
+    SLICE_X67Y82.Y       Tilo                  0.612   u2/PC_mux0005<16>1122
+                                                       u2/PC_or00001
+    SLICE_X69Y84.F3      net (fanout=107)      0.731   u2/PC_or0000
+    SLICE_X69Y84.COUT    Topcyf                1.011   u2/PC_share0002<3>
+                                                       u2/Madd_PC_share0002_lut<3>
+                                                       u2/Madd_PC_share0002_cy<3>
+                                                       u2/Madd_PC_share0002_cy<4>
+    SLICE_X69Y85.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0002_cy<4>
+    SLICE_X69Y85.COUT    Tbyp                  0.103   u2/PC_share0002<5>
+                                                       u2/Madd_PC_share0002_cy<5>
+                                                       u2/Madd_PC_share0002_cy<6>
+    SLICE_X69Y86.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0002_cy<6>
+    SLICE_X69Y86.COUT    Tbyp                  0.103   u2/PC_share0002<7>
+                                                       u2/Madd_PC_share0002_cy<7>
+                                                       u2/Madd_PC_share0002_cy<8>
+    SLICE_X69Y87.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0002_cy<8>
+    SLICE_X69Y87.COUT    Tbyp                  0.103   u2/PC_share0002<9>
+                                                       u2/Madd_PC_share0002_cy<9>
+                                                       u2/Madd_PC_share0002_cy<10>
+    SLICE_X69Y88.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0002_cy<10>
+    SLICE_X69Y88.Y       Tciny                 0.756   u2/PC_share0002<11>
+                                                       u2/Madd_PC_share0002_cy<11>
+                                                       u2/Madd_PC_share0002_xor<12>
+    SLICE_X63Y82.F4      net (fanout=1)        0.745   u2/PC_share0002<12>
+    SLICE_X63Y82.X       Tilo                  0.612   u2/PC_mux0005<12>
+                                                       u2/PC_mux0005<12>59
+    SLICE_X67Y94.F2      net (fanout=1)        0.649   u2/PC_mux0005<12>
+    SLICE_X67Y94.COUT    Topcyf                1.011   u2/PC_share0001<12>
+                                                       u2/Madd_PC_share0001_lut<12>
+                                                       u2/Madd_PC_share0001_cy<12>
+                                                       u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.Y       Tciny                 0.756   u2/PC_share0001<14>
+                                                       u2/Madd_PC_share0001_cy<14>
+                                                       u2/Madd_PC_share0001_xor<15>
+    SLICE_X66Y98.F1      net (fanout=2)        0.329   u2/PC_share0001<15>
+    SLICE_X66Y98.X       Tilo                  0.660   u2/PC_mux0002<15>
+                                                       u2/PC_mux0002<15>31
+    SLICE_X64Y99.BY      net (fanout=1)        0.384   u2/PC_mux0002<15>
+    SLICE_X64Y99.COUT    Tbycy                 0.823   u2/PC_share0000<14>
+                                                       u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.COUT   Tbyp                  0.113   u2/PC_share0000<16>
+                                                       u2/Maddsub_PC_share0000_cy<16>
+                                                       u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.COUT   Tbyp                  0.113   u2/PC_share0000<18>
+                                                       u2/Maddsub_PC_share0000_cy<18>
+                                                       u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.COUT   Tbyp                  0.113   u2/PC_share0000<20>
+                                                       u2/Maddsub_PC_share0000_cy<20>
+                                                       u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.COUT   Tbyp                  0.113   u2/PC_share0000<22>
+                                                       u2/Maddsub_PC_share0000_cy<22>
+                                                       u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.COUT   Tbyp                  0.113   u2/PC_share0000<24>
+                                                       u2/Maddsub_PC_share0000_cy<24>
+                                                       u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.Y      Tciny                 0.768   u2/PC_share0000<26>
+                                                       u2/Maddsub_PC_share0000_cy<26>
+                                                       u2/Maddsub_PC_share0000_xor<27>
+    SLICE_X67Y105.G4     net (fanout=2)        0.314   u2/PC_share0000<27>
+    SLICE_X67Y105.Y      Tilo                  0.612   u2/PC<27>
+                                                       u2/PC_mux0000<27>
+    SLICE_X65Y105.F1     net (fanout=2)        0.438   u2/PC_mux0000<27>
+    SLICE_X65Y105.COUT   Topcyf                1.011   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+                                                       u2/Mcompar_NPC_cmp_lt0000_lut<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.CIN    net (fanout=1)        0.000   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.XB     Tcinxb                0.352   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X61Y104.G4     net (fanout=32)       1.318   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X61Y104.CLK    Tgck                  0.728   u2/NPC<19>
+                                                       u2/Mmux_NPC_mux0013101
+                                                       u2/NPC_18
+    -------------------------------------------------  ---------------------------
+
+--------------------------------------------------------------------------------
+Slack:                  -0.695 (requirement - (data path - clock path skew + uncertainty))
+  Source:               u2/instruction_3_13 (FF)
+  Destination:          u2/NPC_5 (FF)
+  Requirement:          17.813
+  Data Path Delay:      18.508 (Levels of Logic = 23)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP falling at 17.813ns
+  Clock Uncertainty:    0.000
+
+  Maximum Data Path: u2/instruction_3_13 to u2/NPC_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X69Y76.XQ      Tcko                  0.514   u2/instruction_3_13
+                                                       u2/instruction_3_13
+    SLICE_X66Y78.G2      net (fanout=20)       0.635   u2/instruction_3_13
+    SLICE_X66Y78.Y       Tilo                  0.660   u2/PC_cmp_eq0010
+                                                       u2/PC_cmp_eq00101_SW0
+    SLICE_X66Y78.F4      net (fanout=1)        0.020   u2/PC_cmp_eq00101_SW0/O
+    SLICE_X66Y78.X       Tilo                  0.660   u2/PC_cmp_eq0010
+                                                       u2/PC_cmp_eq00101
+    SLICE_X67Y82.G4      net (fanout=8)        0.527   u2/PC_cmp_eq0010
+    SLICE_X67Y82.Y       Tilo                  0.612   u2/PC_mux0005<16>1122
+                                                       u2/PC_or00001
+    SLICE_X69Y84.F3      net (fanout=107)      0.731   u2/PC_or0000
+    SLICE_X69Y84.COUT    Topcyf                1.011   u2/PC_share0002<3>
+                                                       u2/Madd_PC_share0002_lut<3>
+                                                       u2/Madd_PC_share0002_cy<3>
+                                                       u2/Madd_PC_share0002_cy<4>
+    SLICE_X69Y85.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0002_cy<4>
+    SLICE_X69Y85.COUT    Tbyp                  0.103   u2/PC_share0002<5>
+                                                       u2/Madd_PC_share0002_cy<5>
+                                                       u2/Madd_PC_share0002_cy<6>
+    SLICE_X69Y86.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0002_cy<6>
+    SLICE_X69Y86.COUT    Tbyp                  0.103   u2/PC_share0002<7>
+                                                       u2/Madd_PC_share0002_cy<7>
+                                                       u2/Madd_PC_share0002_cy<8>
+    SLICE_X69Y87.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0002_cy<8>
+    SLICE_X69Y87.COUT    Tbyp                  0.103   u2/PC_share0002<9>
+                                                       u2/Madd_PC_share0002_cy<9>
+                                                       u2/Madd_PC_share0002_cy<10>
+    SLICE_X69Y88.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0002_cy<10>
+    SLICE_X69Y88.Y       Tciny                 0.756   u2/PC_share0002<11>
+                                                       u2/Madd_PC_share0002_cy<11>
+                                                       u2/Madd_PC_share0002_xor<12>
+    SLICE_X63Y82.F4      net (fanout=1)        0.745   u2/PC_share0002<12>
+    SLICE_X63Y82.X       Tilo                  0.612   u2/PC_mux0005<12>
+                                                       u2/PC_mux0005<12>59
+    SLICE_X67Y94.F2      net (fanout=1)        0.649   u2/PC_mux0005<12>
+    SLICE_X67Y94.COUT    Topcyf                1.011   u2/PC_share0001<12>
+                                                       u2/Madd_PC_share0001_lut<12>
+                                                       u2/Madd_PC_share0001_cy<12>
+                                                       u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.Y       Tciny                 0.756   u2/PC_share0001<14>
+                                                       u2/Madd_PC_share0001_cy<14>
+                                                       u2/Madd_PC_share0001_xor<15>
+    SLICE_X66Y98.F1      net (fanout=2)        0.329   u2/PC_share0001<15>
+    SLICE_X66Y98.X       Tilo                  0.660   u2/PC_mux0002<15>
+                                                       u2/PC_mux0002<15>31
+    SLICE_X64Y99.BY      net (fanout=1)        0.384   u2/PC_mux0002<15>
+    SLICE_X64Y99.COUT    Tbycy                 0.823   u2/PC_share0000<14>
+                                                       u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.COUT   Tbyp                  0.113   u2/PC_share0000<16>
+                                                       u2/Maddsub_PC_share0000_cy<16>
+                                                       u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.COUT   Tbyp                  0.113   u2/PC_share0000<18>
+                                                       u2/Maddsub_PC_share0000_cy<18>
+                                                       u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.COUT   Tbyp                  0.113   u2/PC_share0000<20>
+                                                       u2/Maddsub_PC_share0000_cy<20>
+                                                       u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.COUT   Tbyp                  0.113   u2/PC_share0000<22>
+                                                       u2/Maddsub_PC_share0000_cy<22>
+                                                       u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.COUT   Tbyp                  0.113   u2/PC_share0000<24>
+                                                       u2/Maddsub_PC_share0000_cy<24>
+                                                       u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.Y      Tciny                 0.768   u2/PC_share0000<26>
+                                                       u2/Maddsub_PC_share0000_cy<26>
+                                                       u2/Maddsub_PC_share0000_xor<27>
+    SLICE_X67Y105.G4     net (fanout=2)        0.314   u2/PC_share0000<27>
+    SLICE_X67Y105.Y      Tilo                  0.612   u2/PC<27>
+                                                       u2/PC_mux0000<27>
+    SLICE_X65Y105.F1     net (fanout=2)        0.438   u2/PC_mux0000<27>
+    SLICE_X65Y105.COUT   Topcyf                1.011   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+                                                       u2/Mcompar_NPC_cmp_lt0000_lut<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.CIN    net (fanout=1)        0.000   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.XB     Tcinxb                0.352   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X61Y105.F4     net (fanout=32)       1.316   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X61Y105.CLK    Tfck                  0.728   u2/NPC<5>
+                                                       u2/Mmux_NPC_mux0013281
+                                                       u2/NPC_5
+    -------------------------------------------------  ---------------------------
+
+--------------------------------------------------------------------------------
+Slack:                  -0.693 (requirement - (data path - clock path skew + uncertainty))
+  Source:               u2/instruction_3_14 (FF)
+  Destination:          u2/NPC_4 (FF)
+  Requirement:          17.813
+  Data Path Delay:      18.506 (Levels of Logic = 21)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP falling at 17.813ns
+  Clock Uncertainty:    0.000
+
+  Maximum Data Path: u2/instruction_3_14 to u2/NPC_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X67Y78.YQ      Tcko                  0.511   u2/instruction_3_15
+                                                       u2/instruction_3_14
+    SLICE_X68Y78.F1      net (fanout=19)       0.882   u2/instruction_3_14
+    SLICE_X68Y78.X       Tif5x                 1.000   u2/alu_in1_or0000
+                                                       u2/PC_or000421
+                                                       u2/PC_or00042_f5
+    SLICE_X65Y80.G4      net (fanout=18)       0.497   u2/alu_in1_or0000
+    SLICE_X65Y80.Y       Tilo                  0.612   N2
+                                                       u2/OUTPUT_and00031
+    SLICE_X64Y85.G1      net (fanout=75)       1.048   u2/OUTPUT_and0003
+    SLICE_X64Y85.X       Tif5x                 1.000   u2/PC_mux0005<9>28
+                                                       u2/PC_mux0005<9>282
+                                                       u2/PC_mux0005<9>28_f5
+    SLICE_X65Y86.BX      net (fanout=2)        0.610   u2/PC_mux0005<9>28
+    SLICE_X65Y86.X       Tbxx                  0.641   N323
+                                                       u2/PC_mux0005<9>37_SW1
+    SLICE_X66Y87.F4      net (fanout=1)        0.298   N323
+    SLICE_X66Y87.X       Tilo                  0.660   u2/PC_mux0005<9>
+                                                       u2/PC_mux0005<9>59
+    SLICE_X67Y92.G2      net (fanout=1)        0.612   u2/PC_mux0005<9>
+    SLICE_X67Y92.COUT    Topcyg                0.871   u2/PC_share0001<8>
+                                                       u2/Madd_PC_share0001_lut<9>
+                                                       u2/Madd_PC_share0001_cy<9>
+    SLICE_X67Y93.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<9>
+    SLICE_X67Y93.COUT    Tbyp                  0.103   u2/PC_share0001<10>
+                                                       u2/Madd_PC_share0001_cy<10>
+                                                       u2/Madd_PC_share0001_cy<11>
+    SLICE_X67Y94.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<11>
+    SLICE_X67Y94.COUT    Tbyp                  0.103   u2/PC_share0001<12>
+                                                       u2/Madd_PC_share0001_cy<12>
+                                                       u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.Y       Tciny                 0.756   u2/PC_share0001<14>
+                                                       u2/Madd_PC_share0001_cy<14>
+                                                       u2/Madd_PC_share0001_xor<15>
+    SLICE_X66Y98.F1      net (fanout=2)        0.329   u2/PC_share0001<15>
+    SLICE_X66Y98.X       Tilo                  0.660   u2/PC_mux0002<15>
+                                                       u2/PC_mux0002<15>31
+    SLICE_X64Y99.BY      net (fanout=1)        0.384   u2/PC_mux0002<15>
+    SLICE_X64Y99.COUT    Tbycy                 0.823   u2/PC_share0000<14>
+                                                       u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.COUT   Tbyp                  0.113   u2/PC_share0000<16>
+                                                       u2/Maddsub_PC_share0000_cy<16>
+                                                       u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.COUT   Tbyp                  0.113   u2/PC_share0000<18>
+                                                       u2/Maddsub_PC_share0000_cy<18>
+                                                       u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.COUT   Tbyp                  0.113   u2/PC_share0000<20>
+                                                       u2/Maddsub_PC_share0000_cy<20>
+                                                       u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.COUT   Tbyp                  0.113   u2/PC_share0000<22>
+                                                       u2/Maddsub_PC_share0000_cy<22>
+                                                       u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.COUT   Tbyp                  0.113   u2/PC_share0000<24>
+                                                       u2/Maddsub_PC_share0000_cy<24>
+                                                       u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.Y      Tciny                 0.768   u2/PC_share0000<26>
+                                                       u2/Maddsub_PC_share0000_cy<26>
+                                                       u2/Maddsub_PC_share0000_xor<27>
+    SLICE_X67Y105.G4     net (fanout=2)        0.314   u2/PC_share0000<27>
+    SLICE_X67Y105.Y      Tilo                  0.612   u2/PC<27>
+                                                       u2/PC_mux0000<27>
+    SLICE_X65Y105.F1     net (fanout=2)        0.438   u2/PC_mux0000<27>
+    SLICE_X65Y105.COUT   Topcyf                1.011   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+                                                       u2/Mcompar_NPC_cmp_lt0000_lut<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.CIN    net (fanout=1)        0.000   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.XB     Tcinxb                0.352   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X61Y105.G4     net (fanout=32)       1.318   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X61Y105.CLK    Tgck                  0.728   u2/NPC<5>
+                                                       u2/Mmux_NPC_mux0013271
+                                                       u2/NPC_4
+    -------------------------------------------------  ---------------------------
+
+--------------------------------------------------------------------------------
+Slack:                  -0.693 (requirement - (data path - clock path skew + uncertainty))
+  Source:               u2/instruction_3_14 (FF)
+  Destination:          u2/NPC_18 (FF)
+  Requirement:          17.813
+  Data Path Delay:      18.506 (Levels of Logic = 21)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP falling at 17.813ns
+  Clock Uncertainty:    0.000
+
+  Maximum Data Path: u2/instruction_3_14 to u2/NPC_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X67Y78.YQ      Tcko                  0.511   u2/instruction_3_15
+                                                       u2/instruction_3_14
+    SLICE_X68Y78.F1      net (fanout=19)       0.882   u2/instruction_3_14
+    SLICE_X68Y78.X       Tif5x                 1.000   u2/alu_in1_or0000
+                                                       u2/PC_or000421
+                                                       u2/PC_or00042_f5
+    SLICE_X65Y80.G4      net (fanout=18)       0.497   u2/alu_in1_or0000
+    SLICE_X65Y80.Y       Tilo                  0.612   N2
+                                                       u2/OUTPUT_and00031
+    SLICE_X64Y85.G1      net (fanout=75)       1.048   u2/OUTPUT_and0003
+    SLICE_X64Y85.X       Tif5x                 1.000   u2/PC_mux0005<9>28
+                                                       u2/PC_mux0005<9>282
+                                                       u2/PC_mux0005<9>28_f5
+    SLICE_X65Y86.BX      net (fanout=2)        0.610   u2/PC_mux0005<9>28
+    SLICE_X65Y86.X       Tbxx                  0.641   N323
+                                                       u2/PC_mux0005<9>37_SW1
+    SLICE_X66Y87.F4      net (fanout=1)        0.298   N323
+    SLICE_X66Y87.X       Tilo                  0.660   u2/PC_mux0005<9>
+                                                       u2/PC_mux0005<9>59
+    SLICE_X67Y92.G2      net (fanout=1)        0.612   u2/PC_mux0005<9>
+    SLICE_X67Y92.COUT    Topcyg                0.871   u2/PC_share0001<8>
+                                                       u2/Madd_PC_share0001_lut<9>
+                                                       u2/Madd_PC_share0001_cy<9>
+    SLICE_X67Y93.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<9>
+    SLICE_X67Y93.COUT    Tbyp                  0.103   u2/PC_share0001<10>
+                                                       u2/Madd_PC_share0001_cy<10>
+                                                       u2/Madd_PC_share0001_cy<11>
+    SLICE_X67Y94.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<11>
+    SLICE_X67Y94.COUT    Tbyp                  0.103   u2/PC_share0001<12>
+                                                       u2/Madd_PC_share0001_cy<12>
+                                                       u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.Y       Tciny                 0.756   u2/PC_share0001<14>
+                                                       u2/Madd_PC_share0001_cy<14>
+                                                       u2/Madd_PC_share0001_xor<15>
+    SLICE_X66Y98.F1      net (fanout=2)        0.329   u2/PC_share0001<15>
+    SLICE_X66Y98.X       Tilo                  0.660   u2/PC_mux0002<15>
+                                                       u2/PC_mux0002<15>31
+    SLICE_X64Y99.BY      net (fanout=1)        0.384   u2/PC_mux0002<15>
+    SLICE_X64Y99.COUT    Tbycy                 0.823   u2/PC_share0000<14>
+                                                       u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.COUT   Tbyp                  0.113   u2/PC_share0000<16>
+                                                       u2/Maddsub_PC_share0000_cy<16>
+                                                       u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.COUT   Tbyp                  0.113   u2/PC_share0000<18>
+                                                       u2/Maddsub_PC_share0000_cy<18>
+                                                       u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.COUT   Tbyp                  0.113   u2/PC_share0000<20>
+                                                       u2/Maddsub_PC_share0000_cy<20>
+                                                       u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.COUT   Tbyp                  0.113   u2/PC_share0000<22>
+                                                       u2/Maddsub_PC_share0000_cy<22>
+                                                       u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.COUT   Tbyp                  0.113   u2/PC_share0000<24>
+                                                       u2/Maddsub_PC_share0000_cy<24>
+                                                       u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.Y      Tciny                 0.768   u2/PC_share0000<26>
+                                                       u2/Maddsub_PC_share0000_cy<26>
+                                                       u2/Maddsub_PC_share0000_xor<27>
+    SLICE_X67Y105.G4     net (fanout=2)        0.314   u2/PC_share0000<27>
+    SLICE_X67Y105.Y      Tilo                  0.612   u2/PC<27>
+                                                       u2/PC_mux0000<27>
+    SLICE_X65Y105.F1     net (fanout=2)        0.438   u2/PC_mux0000<27>
+    SLICE_X65Y105.COUT   Topcyf                1.011   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+                                                       u2/Mcompar_NPC_cmp_lt0000_lut<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.CIN    net (fanout=1)        0.000   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.XB     Tcinxb                0.352   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X61Y104.G4     net (fanout=32)       1.318   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X61Y104.CLK    Tgck                  0.728   u2/NPC<19>
+                                                       u2/Mmux_NPC_mux0013101
+                                                       u2/NPC_18
+    -------------------------------------------------  ---------------------------
+
+--------------------------------------------------------------------------------
+Slack:                  -0.692 (requirement - (data path - clock path skew + uncertainty))
+  Source:               u2/instruction_3_14 (FF)
+  Destination:          u2/NPC_8 (FF)
+  Requirement:          17.813
+  Data Path Delay:      18.505 (Levels of Logic = 21)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP falling at 17.813ns
+  Clock Uncertainty:    0.000
+
+  Maximum Data Path: u2/instruction_3_14 to u2/NPC_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X67Y78.YQ      Tcko                  0.511   u2/instruction_3_15
+                                                       u2/instruction_3_14
+    SLICE_X68Y78.F1      net (fanout=19)       0.882   u2/instruction_3_14
+    SLICE_X68Y78.X       Tif5x                 1.000   u2/alu_in1_or0000
+                                                       u2/PC_or000421
+                                                       u2/PC_or00042_f5
+    SLICE_X65Y80.G4      net (fanout=18)       0.497   u2/alu_in1_or0000
+    SLICE_X65Y80.Y       Tilo                  0.612   N2
+                                                       u2/OUTPUT_and00031
+    SLICE_X64Y85.F1      net (fanout=75)       1.043   u2/OUTPUT_and0003
+    SLICE_X64Y85.X       Tif5x                 1.000   u2/PC_mux0005<9>28
+                                                       u2/PC_mux0005<9>281
+                                                       u2/PC_mux0005<9>28_f5
+    SLICE_X65Y86.BX      net (fanout=2)        0.610   u2/PC_mux0005<9>28
+    SLICE_X65Y86.X       Tbxx                  0.641   N323
+                                                       u2/PC_mux0005<9>37_SW1
+    SLICE_X66Y87.F4      net (fanout=1)        0.298   N323
+    SLICE_X66Y87.X       Tilo                  0.660   u2/PC_mux0005<9>
+                                                       u2/PC_mux0005<9>59
+    SLICE_X67Y92.G2      net (fanout=1)        0.612   u2/PC_mux0005<9>
+    SLICE_X67Y92.COUT    Topcyg                0.871   u2/PC_share0001<8>
+                                                       u2/Madd_PC_share0001_lut<9>
+                                                       u2/Madd_PC_share0001_cy<9>
+    SLICE_X67Y93.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<9>
+    SLICE_X67Y93.COUT    Tbyp                  0.103   u2/PC_share0001<10>
+                                                       u2/Madd_PC_share0001_cy<10>
+                                                       u2/Madd_PC_share0001_cy<11>
+    SLICE_X67Y94.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<11>
+    SLICE_X67Y94.COUT    Tbyp                  0.103   u2/PC_share0001<12>
+                                                       u2/Madd_PC_share0001_cy<12>
+                                                       u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.Y       Tciny                 0.756   u2/PC_share0001<14>
+                                                       u2/Madd_PC_share0001_cy<14>
+                                                       u2/Madd_PC_share0001_xor<15>
+    SLICE_X66Y98.F1      net (fanout=2)        0.329   u2/PC_share0001<15>
+    SLICE_X66Y98.X       Tilo                  0.660   u2/PC_mux0002<15>
+                                                       u2/PC_mux0002<15>31
+    SLICE_X64Y99.BY      net (fanout=1)        0.384   u2/PC_mux0002<15>
+    SLICE_X64Y99.COUT    Tbycy                 0.823   u2/PC_share0000<14>
+                                                       u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.COUT   Tbyp                  0.113   u2/PC_share0000<16>
+                                                       u2/Maddsub_PC_share0000_cy<16>
+                                                       u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.COUT   Tbyp                  0.113   u2/PC_share0000<18>
+                                                       u2/Maddsub_PC_share0000_cy<18>
+                                                       u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.COUT   Tbyp                  0.113   u2/PC_share0000<20>
+                                                       u2/Maddsub_PC_share0000_cy<20>
+                                                       u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.COUT   Tbyp                  0.113   u2/PC_share0000<22>
+                                                       u2/Maddsub_PC_share0000_cy<22>
+                                                       u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.COUT   Tbyp                  0.113   u2/PC_share0000<24>
+                                                       u2/Maddsub_PC_share0000_cy<24>
+                                                       u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.Y      Tciny                 0.768   u2/PC_share0000<26>
+                                                       u2/Maddsub_PC_share0000_cy<26>
+                                                       u2/Maddsub_PC_share0000_xor<27>
+    SLICE_X67Y105.G4     net (fanout=2)        0.314   u2/PC_share0000<27>
+    SLICE_X67Y105.Y      Tilo                  0.612   u2/PC<27>
+                                                       u2/PC_mux0000<27>
+    SLICE_X65Y105.F1     net (fanout=2)        0.438   u2/PC_mux0000<27>
+    SLICE_X65Y105.COUT   Topcyf                1.011   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+                                                       u2/Mcompar_NPC_cmp_lt0000_lut<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.CIN    net (fanout=1)        0.000   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.XB     Tcinxb                0.352   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X60Y105.G3     net (fanout=32)       1.274   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X60Y105.CLK    Tgck                  0.776   u2/NPC<9>
+                                                       u2/Mmux_NPC_mux0013311
+                                                       u2/NPC_8
+    -------------------------------------------------  ---------------------------
+
+--------------------------------------------------------------------------------
+Slack:                  -0.691 (requirement - (data path - clock path skew + uncertainty))
+  Source:               u2/instruction_3_14 (FF)
+  Destination:          u2/NPC_5 (FF)
+  Requirement:          17.813
+  Data Path Delay:      18.504 (Levels of Logic = 21)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP falling at 17.813ns
+  Clock Uncertainty:    0.000
+
+  Maximum Data Path: u2/instruction_3_14 to u2/NPC_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X67Y78.YQ      Tcko                  0.511   u2/instruction_3_15
+                                                       u2/instruction_3_14
+    SLICE_X68Y78.F1      net (fanout=19)       0.882   u2/instruction_3_14
+    SLICE_X68Y78.X       Tif5x                 1.000   u2/alu_in1_or0000
+                                                       u2/PC_or000421
+                                                       u2/PC_or00042_f5
+    SLICE_X65Y80.G4      net (fanout=18)       0.497   u2/alu_in1_or0000
+    SLICE_X65Y80.Y       Tilo                  0.612   N2
+                                                       u2/OUTPUT_and00031
+    SLICE_X64Y85.G1      net (fanout=75)       1.048   u2/OUTPUT_and0003
+    SLICE_X64Y85.X       Tif5x                 1.000   u2/PC_mux0005<9>28
+                                                       u2/PC_mux0005<9>282
+                                                       u2/PC_mux0005<9>28_f5
+    SLICE_X65Y86.BX      net (fanout=2)        0.610   u2/PC_mux0005<9>28
+    SLICE_X65Y86.X       Tbxx                  0.641   N323
+                                                       u2/PC_mux0005<9>37_SW1
+    SLICE_X66Y87.F4      net (fanout=1)        0.298   N323
+    SLICE_X66Y87.X       Tilo                  0.660   u2/PC_mux0005<9>
+                                                       u2/PC_mux0005<9>59
+    SLICE_X67Y92.G2      net (fanout=1)        0.612   u2/PC_mux0005<9>
+    SLICE_X67Y92.COUT    Topcyg                0.871   u2/PC_share0001<8>
+                                                       u2/Madd_PC_share0001_lut<9>
+                                                       u2/Madd_PC_share0001_cy<9>
+    SLICE_X67Y93.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<9>
+    SLICE_X67Y93.COUT    Tbyp                  0.103   u2/PC_share0001<10>
+                                                       u2/Madd_PC_share0001_cy<10>
+                                                       u2/Madd_PC_share0001_cy<11>
+    SLICE_X67Y94.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<11>
+    SLICE_X67Y94.COUT    Tbyp                  0.103   u2/PC_share0001<12>
+                                                       u2/Madd_PC_share0001_cy<12>
+                                                       u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.Y       Tciny                 0.756   u2/PC_share0001<14>
+                                                       u2/Madd_PC_share0001_cy<14>
+                                                       u2/Madd_PC_share0001_xor<15>
+    SLICE_X66Y98.F1      net (fanout=2)        0.329   u2/PC_share0001<15>
+    SLICE_X66Y98.X       Tilo                  0.660   u2/PC_mux0002<15>
+                                                       u2/PC_mux0002<15>31
+    SLICE_X64Y99.BY      net (fanout=1)        0.384   u2/PC_mux0002<15>
+    SLICE_X64Y99.COUT    Tbycy                 0.823   u2/PC_share0000<14>
+                                                       u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.COUT   Tbyp                  0.113   u2/PC_share0000<16>
+                                                       u2/Maddsub_PC_share0000_cy<16>
+                                                       u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.COUT   Tbyp                  0.113   u2/PC_share0000<18>
+                                                       u2/Maddsub_PC_share0000_cy<18>
+                                                       u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.COUT   Tbyp                  0.113   u2/PC_share0000<20>
+                                                       u2/Maddsub_PC_share0000_cy<20>
+                                                       u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.COUT   Tbyp                  0.113   u2/PC_share0000<22>
+                                                       u2/Maddsub_PC_share0000_cy<22>
+                                                       u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.COUT   Tbyp                  0.113   u2/PC_share0000<24>
+                                                       u2/Maddsub_PC_share0000_cy<24>
+                                                       u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.Y      Tciny                 0.768   u2/PC_share0000<26>
+                                                       u2/Maddsub_PC_share0000_cy<26>
+                                                       u2/Maddsub_PC_share0000_xor<27>
+    SLICE_X67Y105.G4     net (fanout=2)        0.314   u2/PC_share0000<27>
+    SLICE_X67Y105.Y      Tilo                  0.612   u2/PC<27>
+                                                       u2/PC_mux0000<27>
+    SLICE_X65Y105.F1     net (fanout=2)        0.438   u2/PC_mux0000<27>
+    SLICE_X65Y105.COUT   Topcyf                1.011   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+                                                       u2/Mcompar_NPC_cmp_lt0000_lut<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.CIN    net (fanout=1)        0.000   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.XB     Tcinxb                0.352   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X61Y105.F4     net (fanout=32)       1.316   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X61Y105.CLK    Tfck                  0.728   u2/NPC<5>
+                                                       u2/Mmux_NPC_mux0013281
+                                                       u2/NPC_5
+    -------------------------------------------------  ---------------------------
+
+--------------------------------------------------------------------------------
+Slack:                  -0.688 (requirement - (data path - clock path skew + uncertainty))
+  Source:               u2/instruction_3_14 (FF)
+  Destination:          u2/NPC_18 (FF)
+  Requirement:          17.813
+  Data Path Delay:      18.501 (Levels of Logic = 21)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP falling at 17.813ns
+  Clock Uncertainty:    0.000
+
+  Maximum Data Path: u2/instruction_3_14 to u2/NPC_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X67Y78.YQ      Tcko                  0.511   u2/instruction_3_15
+                                                       u2/instruction_3_14
+    SLICE_X68Y78.F1      net (fanout=19)       0.882   u2/instruction_3_14
+    SLICE_X68Y78.X       Tif5x                 1.000   u2/alu_in1_or0000
+                                                       u2/PC_or000421
+                                                       u2/PC_or00042_f5
+    SLICE_X65Y80.G4      net (fanout=18)       0.497   u2/alu_in1_or0000
+    SLICE_X65Y80.Y       Tilo                  0.612   N2
+                                                       u2/OUTPUT_and00031
+    SLICE_X64Y85.F1      net (fanout=75)       1.043   u2/OUTPUT_and0003
+    SLICE_X64Y85.X       Tif5x                 1.000   u2/PC_mux0005<9>28
+                                                       u2/PC_mux0005<9>281
+                                                       u2/PC_mux0005<9>28_f5
+    SLICE_X65Y86.BX      net (fanout=2)        0.610   u2/PC_mux0005<9>28
+    SLICE_X65Y86.X       Tbxx                  0.641   N323
+                                                       u2/PC_mux0005<9>37_SW1
+    SLICE_X66Y87.F4      net (fanout=1)        0.298   N323
+    SLICE_X66Y87.X       Tilo                  0.660   u2/PC_mux0005<9>
+                                                       u2/PC_mux0005<9>59
+    SLICE_X67Y92.G2      net (fanout=1)        0.612   u2/PC_mux0005<9>
+    SLICE_X67Y92.COUT    Topcyg                0.871   u2/PC_share0001<8>
+                                                       u2/Madd_PC_share0001_lut<9>
+                                                       u2/Madd_PC_share0001_cy<9>
+    SLICE_X67Y93.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<9>
+    SLICE_X67Y93.COUT    Tbyp                  0.103   u2/PC_share0001<10>
+                                                       u2/Madd_PC_share0001_cy<10>
+                                                       u2/Madd_PC_share0001_cy<11>
+    SLICE_X67Y94.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<11>
+    SLICE_X67Y94.COUT    Tbyp                  0.103   u2/PC_share0001<12>
+                                                       u2/Madd_PC_share0001_cy<12>
+                                                       u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.CIN     net (fanout=1)        0.000   u2/Madd_PC_share0001_cy<13>
+    SLICE_X67Y95.Y       Tciny                 0.756   u2/PC_share0001<14>
+                                                       u2/Madd_PC_share0001_cy<14>
+                                                       u2/Madd_PC_share0001_xor<15>
+    SLICE_X66Y98.F1      net (fanout=2)        0.329   u2/PC_share0001<15>
+    SLICE_X66Y98.X       Tilo                  0.660   u2/PC_mux0002<15>
+                                                       u2/PC_mux0002<15>31
+    SLICE_X64Y99.BY      net (fanout=1)        0.384   u2/PC_mux0002<15>
+    SLICE_X64Y99.COUT    Tbycy                 0.823   u2/PC_share0000<14>
+                                                       u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<15>
+    SLICE_X64Y100.COUT   Tbyp                  0.113   u2/PC_share0000<16>
+                                                       u2/Maddsub_PC_share0000_cy<16>
+                                                       u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<17>
+    SLICE_X64Y101.COUT   Tbyp                  0.113   u2/PC_share0000<18>
+                                                       u2/Maddsub_PC_share0000_cy<18>
+                                                       u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<19>
+    SLICE_X64Y102.COUT   Tbyp                  0.113   u2/PC_share0000<20>
+                                                       u2/Maddsub_PC_share0000_cy<20>
+                                                       u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<21>
+    SLICE_X64Y103.COUT   Tbyp                  0.113   u2/PC_share0000<22>
+                                                       u2/Maddsub_PC_share0000_cy<22>
+                                                       u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<23>
+    SLICE_X64Y104.COUT   Tbyp                  0.113   u2/PC_share0000<24>
+                                                       u2/Maddsub_PC_share0000_cy<24>
+                                                       u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.CIN    net (fanout=1)        0.000   u2/Maddsub_PC_share0000_cy<25>
+    SLICE_X64Y105.Y      Tciny                 0.768   u2/PC_share0000<26>
+                                                       u2/Maddsub_PC_share0000_cy<26>
+                                                       u2/Maddsub_PC_share0000_xor<27>
+    SLICE_X67Y105.G4     net (fanout=2)        0.314   u2/PC_share0000<27>
+    SLICE_X67Y105.Y      Tilo                  0.612   u2/PC<27>
+                                                       u2/PC_mux0000<27>
+    SLICE_X65Y105.F1     net (fanout=2)        0.438   u2/PC_mux0000<27>
+    SLICE_X65Y105.COUT   Topcyf                1.011   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+                                                       u2/Mcompar_NPC_cmp_lt0000_lut<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<8>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.CIN    net (fanout=1)        0.000   u2/Mcompar_NPC_cmp_lt0000_cy<9>
+    SLICE_X65Y106.XB     Tcinxb                0.352   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+                                                       u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X61Y104.G4     net (fanout=32)       1.318   u2/Mcompar_NPC_cmp_lt0000_cy<10>
+    SLICE_X61Y104.CLK    Tgck                  0.728   u2/NPC<19>
+                                                       u2/Mmux_NPC_mux0013101
+                                                       u2/NPC_18
+    -------------------------------------------------  ---------------------------
+
+--------------------------------------------------------------------------------
+
+
+1 constraint not met.
+
+
+

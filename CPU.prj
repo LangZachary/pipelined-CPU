@@ -1,0 +1,7 @@
+vhdl work "ROM.vhd"
+vhdl work "Register.vhd"
+vhdl work "RAM.vhd"
+vhdl work "Display_Controller.vhd"
+vhdl work "CU.vhd"
+vhdl work "ALU.vhd"
+vhdl work "CPU.vhd"

@@ -1,0 +1,14 @@
+EN cu NULL C:/Users/zlang/Final_Project_Complete/CU.vhd sub00/vhpl04 1490827592
+EN rom NULL C:/Users/zlang/Final_Project_Complete/ROM.vhd sub00/vhpl06 1490827594
+AR rom behavioral C:/Users/zlang/Final_Project_Complete/ROM.vhd sub00/vhpl07 1490827595
+AR alu behavioural C:/Users/zlang/Final_Project_Complete/ALU.vhd sub00/vhpl01 1490827589
+EN display_controller NULL C:/Users/zlang/Final_Project_Complete/Display_Controller.vhd sub00/vhpl12 1490827598
+EN cpu NULL C:/Users/zlang/Final_Project_Complete/CPU.vhd sub00/vhpl08 1490827600
+AR cpu behavioral C:/Users/zlang/Final_Project_Complete/CPU.vhd sub00/vhpl09 1490827601
+AR ram behavioral C:/Users/zlang/Final_Project_Complete/RAM.vhd sub00/vhpl11 1490827597
+AR display_controller arch C:/Users/zlang/Final_Project_Complete/Display_Controller.vhd sub00/vhpl13 1490827599
+EN ram NULL C:/Users/zlang/Final_Project_Complete/RAM.vhd sub00/vhpl10 1490827596
+EN reg NULL C:/Users/zlang/Final_Project_Complete/Register.vhd sub00/vhpl02 1490827590
+AR cu behavioral C:/Users/zlang/Final_Project_Complete/CU.vhd sub00/vhpl05 1490827593
+EN alu NULL C:/Users/zlang/Final_Project_Complete/ALU.vhd sub00/vhpl00 1490827588
+AR reg behavioural C:/Users/zlang/Final_Project_Complete/Register.vhd sub00/vhpl03 1490827591

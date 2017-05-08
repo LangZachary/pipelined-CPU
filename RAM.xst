@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/zlang/Final_Project_LFormat/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/zlang/Final_Project_LFormat/xst"
+elaborate
+-ifn RAM.prj
+-ifmt mixed

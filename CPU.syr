@@ -1,0 +1,817 @@
+Release 13.4 - xst O.87xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> Reading design: CPU.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "CPU.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "CPU"
+Output Format                      : NGC
+Target Device                      : xc3s1200e-5-fg320
+
+---- Source Options
+Top Module Name                    : CPU
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/zlang/Final_Project_Complete/ALU.vhd" in Library work.
+Architecture behavioural of Entity alu is up to date.
+Compiling vhdl file "C:/Users/zlang/Final_Project_Complete/Register.vhd" in Library work.
+Architecture behavioural of Entity reg is up to date.
+Compiling vhdl file "C:/Users/zlang/Final_Project_Complete/CU.vhd" in Library work.
+Entity <cu> compiled.
+Entity <cu> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/Users/zlang/Final_Project_Complete/ROM.vhd" in Library work.
+Entity <rom> compiled.
+Entity <rom> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/Users/zlang/Final_Project_Complete/RAM.vhd" in Library work.
+Architecture behavioral of Entity ram is up to date.
+Compiling vhdl file "C:/Users/zlang/Final_Project_Complete/Display_Controller.vhd" in Library work.
+Architecture arch of Entity display_controller is up to date.
+Compiling vhdl file "C:/Users/zlang/Final_Project_Complete/CPU.vhd" in Library work.
+Architecture behavioral of Entity cpu is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <CPU> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <ALU> in library <work> (architecture <behavioural>).
+
+Analyzing hierarchy for entity <Reg> in library <work> (architecture <behavioural>).
+
+Analyzing hierarchy for entity <CU> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <ROM> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <RAM> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <display_controller> in library <work> (architecture <arch>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <CPU> in library <work> (Architecture <behavioral>).
+Entity <CPU> analyzed. Unit <CPU> generated.
+
+Analyzing Entity <ALU> in library <work> (Architecture <behavioural>).
+Entity <ALU> analyzed. Unit <ALU> generated.
+
+Analyzing Entity <Reg> in library <work> (Architecture <behavioural>).
+Entity <Reg> analyzed. Unit <Reg> generated.
+
+Analyzing Entity <CU> in library <work> (Architecture <behavioral>).
+Entity <CU> analyzed. Unit <CU> generated.
+
+Analyzing Entity <ROM> in library <work> (Architecture <behavioral>).
+WARNING:Xst:790 - "C:/Users/zlang/Final_Project_Complete/ROM.vhd" line 226: Index value(s) does not match array range, simulation mismatch.
+Entity <ROM> analyzed. Unit <ROM> generated.
+
+Analyzing Entity <RAM> in library <work> (Architecture <behavioral>).
+Entity <RAM> analyzed. Unit <RAM> generated.
+
+Analyzing Entity <display_controller> in library <work> (Architecture <arch>).
+Entity <display_controller> analyzed. Unit <display_controller> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <ALU>.
+    Related source file is "C:/Users/zlang/Final_Project_Complete/ALU.vhd".
+WARNING:Xst:646 - Signal <data_mult<31:16>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 16-bit addsub for signal <data$addsub0000>.
+    Found 16-bit shifter logical left for signal <data$shift0004> created at line 29.
+    Found 16-bit shifter logical right for signal <data$shift0005> created at line 29.
+    Found 16x16-bit multiplier for signal <data_mult$mult0000> created at line 26.
+    Found 16-bit comparator less for signal <n_flag$cmp_lt0000> created at line 43.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Multiplier(s).
+	inferred   1 Comparator(s).
+	inferred   2 Combinational logic shifter(s).
+Unit <ALU> synthesized.
+
+
+Synthesizing Unit <Reg>.
+    Related source file is "C:/Users/zlang/Final_Project_Complete/Register.vhd".
+WARNING:Xst:646 - Signal <data> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 128-bit register for signal <reg_file>.
+    Summary:
+	inferred 128 D-type flip-flop(s).
+Unit <Reg> synthesized.
+
+
+Synthesizing Unit <CU>.
+    Related source file is "C:/Users/zlang/Final_Project_Complete/CU.vhd".
+WARNING:Xst:646 - Signal <instruction<3><5:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <PC_return<31:16>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <input_state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | input_state$and0000       (positive)           |
+    | Power Up State     | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 16-bit register for signal <rom_address>.
+    Found 3-bit register for signal <rd_index1>.
+    Found 3-bit register for signal <rd_index2>.
+    Found 16-bit register for signal <alu_in1>.
+    Found 16-bit register for signal <alu_in2>.
+    Found 1-bit register for signal <wr_ram>.
+    Found 1-bit register for signal <wr_reg>.
+    Found 4-bit register for signal <alu_mode>.
+    Found 16-bit register for signal <ram_address>.
+    Found 16-bit register for signal <ram_dout>.
+    Found 16-bit register for signal <wr_data>.
+    Found 3-bit register for signal <wr_index>.
+    Found 16-bit register for signal <OUTPUT>.
+    Found 8-bit register for signal <LEDOUT>.
+    Found 3-bit comparator equal for signal <alu_in1$cmp_eq0009> created at line 280.
+    Found 3-bit comparator equal for signal <alu_in2$cmp_eq0000> created at line 308.
+    Found 1-bit register for signal <branch_clear>.
+    Found 16-bit register for signal <EX_data>.
+    Found 16-bit register for signal <EX_inputdata>.
+    Found 16-bit register for signal <EX_regdata1>.
+    Found 16-bit register for signal <EX_regdata2>.
+    Found 16-bit register for signal <ID_inputdata>.
+    Found 48-bit register for signal <instruction>.
+    Found 1-bit register for signal <n_test>.
+    Found 32-bit register for signal <NPC>.
+    Found 32-bit adder for signal <NPC$addsub0000> created at line 581.
+    Found 32-bit comparator less for signal <NPC$cmp_lt0000> created at line 580.
+    Found 32-bit 4-to-1 multiplexer for signal <NPC$mux0013>.
+    Found 32-bit register for signal <PC>.
+    Found 32-bit addsub for signal <PC$share0000> created at line 365.
+    Found 32-bit adder for signal <PC$share0001> created at line 365.
+    Found 32-bit adder for signal <PC$share0002> created at line 388.
+    Found 32-bit register for signal <PC_return>.
+    Found 32-bit adder for signal <PC_return$add0000>.
+    Found 32-bit adder for signal <PC_return$add0001> created at line 574.
+    Found 32-bit adder for signal <PC_return$addsub0000>.
+    Found 3-bit comparator equal for signal <ram_address$cmp_eq0000> created at line 468.
+    Found 16-bit register for signal <ram_data>.
+    Found 1-bit register for signal <wait_input>.
+    Found 16-bit register for signal <WB_alu_result>.
+    Found 16-bit register for signal <WB_data>.
+    Found 16-bit register for signal <WB_inputdata>.
+    Found 1-bit register for signal <z_test>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred 427 D-type flip-flop(s).
+	inferred   7 Adder/Subtractor(s).
+	inferred   4 Comparator(s).
+	inferred  32 Multiplexer(s).
+Unit <CU> synthesized.
+
+
+Synthesizing Unit <ROM>.
+    Related source file is "C:/Users/zlang/Final_Project_Complete/ROM.vhd".
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 28x8-bit ROM for signal <data$rom0000> created at line 226.
+    Found 27x8-bit ROM for signal <$mux0000> created at line 226.
+    Summary:
+	inferred   2 ROM(s).
+Unit <ROM> synthesized.
+
+
+Synthesizing Unit <RAM>.
+    Related source file is "C:/Users/zlang/Final_Project_Complete/RAM.vhd".
+    Found 128-bit register for signal <mem>.
+    Found 8-bit 8-to-1 multiplexer for signal <mem$mux0000> created at line 24.
+    Found 8-bit 8-to-1 multiplexer for signal <mem$mux0001> created at line 24.
+    Summary:
+	inferred 128 D-type flip-flop(s).
+	inferred  16 Multiplexer(s).
+Unit <RAM> synthesized.
+
+
+Synthesizing Unit <display_controller>.
+    Related source file is "C:/Users/zlang/Final_Project_Complete/Display_Controller.vhd".
+    Found 16x7-bit ROM for signal <sseg>.
+    Found 1-of-4 decoder for signal <an>.
+    Found 4-bit 4-to-1 multiplexer for signal <hex>.
+    Found 2-bit up counter for signal <q_reg>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   1 Counter(s).
+	inferred   4 Multiplexer(s).
+	inferred   1 Decoder(s).
+Unit <display_controller> synthesized.
+
+
+Synthesizing Unit <CPU>.
+    Related source file is "C:/Users/zlang/Final_Project_Complete/CPU.vhd".
+WARNING:Xst:1306 - Output <result_mult> is never assigned.
+Unit <CPU> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 3
+ 16x7-bit ROM                                          : 1
+ 27x8-bit ROM                                          : 1
+ 28x8-bit ROM                                          : 1
+# Multipliers                                          : 1
+ 16x16-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 8
+ 16-bit addsub                                         : 1
+ 32-bit adder                                          : 6
+ 32-bit addsub                                         : 1
+# Counters                                             : 1
+ 2-bit up counter                                      : 1
+# Registers                                            : 72
+ 1-bit register                                        : 22
+ 16-bit register                                       : 26
+ 3-bit register                                        : 3
+ 32-bit register                                       : 3
+ 4-bit register                                        : 1
+ 8-bit register                                        : 17
+# Comparators                                          : 5
+ 16-bit comparator less                                : 1
+ 3-bit comparator equal                                : 3
+ 32-bit comparator less                                : 1
+# Multiplexers                                         : 4
+ 32-bit 4-to-1 multiplexer                             : 1
+ 4-bit 4-to-1 multiplexer                              : 1
+ 8-bit 8-to-1 multiplexer                              : 2
+# Logic shifters                                       : 2
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 1
+# Decoders                                             : 1
+ 1-of-4 decoder                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <u2/input_state/FSM> on signal <input_state[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 010
+ 011   | 011
+ 100   | 100
+-------------------
+INFO:Xst:2261 - The FF/Latch <PC_0> in Unit <u2> is equivalent to the following FF/Latch, which will be removed : <rom_address_0> 
+INFO:Xst:2261 - The FF/Latch <PC_1> in Unit <u2> is equivalent to the following FF/Latch, which will be removed : <rom_address_1> 
+INFO:Xst:2261 - The FF/Latch <PC_2> in Unit <u2> is equivalent to the following FF/Latch, which will be removed : <rom_address_2> 
+INFO:Xst:2261 - The FF/Latch <PC_3> in Unit <u2> is equivalent to the following FF/Latch, which will be removed : <rom_address_3> 
+INFO:Xst:2261 - The FF/Latch <PC_4> in Unit <u2> is equivalent to the following FF/Latch, which will be removed : <rom_address_4> 
+INFO:Xst:2261 - The FF/Latch <PC_5> in Unit <u2> is equivalent to the following FF/Latch, which will be removed : <rom_address_5> 
+INFO:Xst:2261 - The FF/Latch <PC_6> in Unit <u2> is equivalent to the following FF/Latch, which will be removed : <rom_address_6> 
+INFO:Xst:2261 - The FF/Latch <PC_7> in Unit <u2> is equivalent to the following FF/Latch, which will be removed : <rom_address_7> 
+INFO:Xst:2261 - The FF/Latch <PC_8> in Unit <u2> is equivalent to the following FF/Latch, which will be removed : <rom_address_8> 
+INFO:Xst:2261 - The FF/Latch <PC_9> in Unit <u2> is equivalent to the following FF/Latch, which will be removed : <rom_address_9> 
+INFO:Xst:2261 - The FF/Latch <PC_10> in Unit <u2> is equivalent to the following FF/Latch, which will be removed : <rom_address_10> 
+INFO:Xst:2261 - The FF/Latch <PC_11> in Unit <u2> is equivalent to the following FF/Latch, which will be removed : <rom_address_11> 
+INFO:Xst:2261 - The FF/Latch <PC_12> in Unit <u2> is equivalent to the following FF/Latch, which will be removed : <rom_address_12> 
+INFO:Xst:2261 - The FF/Latch <PC_13> in Unit <u2> is equivalent to the following FF/Latch, which will be removed : <rom_address_13> 
+INFO:Xst:2261 - The FF/Latch <PC_14> in Unit <u2> is equivalent to the following FF/Latch, which will be removed : <rom_address_14> 
+INFO:Xst:2261 - The FF/Latch <PC_15> in Unit <u2> is equivalent to the following FF/Latch, which will be removed : <rom_address_15> 
+WARNING:Xst:2677 - Node <instruction_3_0> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <instruction_3_1> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <instruction_3_2> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <instruction_3_3> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <instruction_3_4> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <instruction_3_5> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <PC_return_16> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <PC_return_17> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <PC_return_18> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <PC_return_19> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <PC_return_20> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <PC_return_21> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <PC_return_22> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <PC_return_23> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <PC_return_24> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <PC_return_25> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <PC_return_26> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <PC_return_27> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <PC_return_28> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <PC_return_29> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <PC_return_30> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <PC_return_31> of sequential type is unconnected in block <u2>.
+
+Synthesizing (advanced) Unit <CPU>.
+	Found pipelined multiplier on signal <u0/data_mult_mult0000>:
+		- 1 pipeline level(s) found in a register on signal <alu_in1>.
+		Pushing register(s) into the multiplier macro.
+
+		- 1 pipeline level(s) found in a register on signal <alu_in2>.
+		Pushing register(s) into the multiplier macro.
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier u0/Mmult_data_mult_mult0000 by adding 1 register level(s).
+Unit <CPU> synthesized (advanced).
+WARNING:Xst:2677 - Node <u2/instruction_3_0> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/instruction_3_1> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/instruction_3_2> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/instruction_3_3> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/instruction_3_4> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/instruction_3_5> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/PC_return_16> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/PC_return_17> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/PC_return_18> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/PC_return_19> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/PC_return_20> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/PC_return_21> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/PC_return_22> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/PC_return_23> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/PC_return_24> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/PC_return_25> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/PC_return_26> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/PC_return_27> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/PC_return_28> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/PC_return_29> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/PC_return_30> of sequential type is unconnected in block <CPU>.
+WARNING:Xst:2677 - Node <u2/PC_return_31> of sequential type is unconnected in block <CPU>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 3
+ 16x7-bit ROM                                          : 1
+ 27x8-bit ROM                                          : 1
+ 28x8-bit ROM                                          : 1
+# Multipliers                                          : 1
+ 16x16-bit registered multiplier                       : 1
+# Adders/Subtractors                                   : 8
+ 16-bit addsub                                         : 1
+ 32-bit adder                                          : 6
+ 32-bit addsub                                         : 1
+# Counters                                             : 1
+ 2-bit up counter                                      : 1
+# Registers                                            : 664
+ Flip-Flops                                            : 664
+# Comparators                                          : 5
+ 16-bit comparator less                                : 1
+ 3-bit comparator equal                                : 3
+ 32-bit comparator less                                : 1
+# Multiplexers                                         : 4
+ 32-bit 4-to-1 multiplexer                             : 1
+ 4-bit 4-to-1 multiplexer                              : 1
+ 8-bit 8-to-1 multiplexer                              : 2
+# Logic shifters                                       : 2
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 1
+# Decoders                                             : 1
+ 1-of-4 decoder                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <u2/LEDOUT_4> in Unit <CPU> is equivalent to the following 3 FFs/Latches, which will be removed : <u2/LEDOUT_5> <u2/LEDOUT_6> <u2/LEDOUT_7> 
+INFO:Xst:2261 - The FF/Latch <u2/LEDOUT_0> in Unit <CPU> is equivalent to the following 3 FFs/Latches, which will be removed : <u2/LEDOUT_1> <u2/LEDOUT_2> <u2/LEDOUT_3> 
+INFO:Xst:2261 - The FF/Latch <u2/PC_0> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <u2/rom_address_0> 
+INFO:Xst:2261 - The FF/Latch <u2/PC_1> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <u2/rom_address_1> 
+INFO:Xst:2261 - The FF/Latch <u2/PC_2> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <u2/rom_address_2> 
+INFO:Xst:2261 - The FF/Latch <u2/PC_3> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <u2/rom_address_3> 
+INFO:Xst:2261 - The FF/Latch <u2/PC_4> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <u2/rom_address_4> 
+INFO:Xst:2261 - The FF/Latch <u2/PC_5> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <u2/rom_address_5> 
+INFO:Xst:2261 - The FF/Latch <u2/PC_6> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <u2/rom_address_6> 
+INFO:Xst:2261 - The FF/Latch <u2/PC_7> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <u2/rom_address_7> 
+INFO:Xst:2261 - The FF/Latch <u2/PC_8> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <u2/rom_address_8> 
+INFO:Xst:2261 - The FF/Latch <u2/PC_10> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <u2/rom_address_10> 
+INFO:Xst:2261 - The FF/Latch <u2/PC_9> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <u2/rom_address_9> 
+INFO:Xst:2261 - The FF/Latch <u2/PC_11> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <u2/rom_address_11> 
+INFO:Xst:2261 - The FF/Latch <u2/PC_12> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <u2/rom_address_12> 
+INFO:Xst:2261 - The FF/Latch <u2/PC_13> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <u2/rom_address_13> 
+INFO:Xst:2261 - The FF/Latch <u2/PC_14> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <u2/rom_address_14> 
+INFO:Xst:2261 - The FF/Latch <u2/PC_15> in Unit <CPU> is equivalent to the following FF/Latch, which will be removed : <u2/rom_address_15> 
+
+Optimizing unit <CPU> ...
+WARNING:Xst:1710 - FF/Latch <u2/alu_mode_3> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <u2/alu_mode_3> (without init value) has a constant value of 0 in block <CPU>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <Reg> ...
+
+Optimizing unit <RAM> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block CPU, actual ratio is 13.
+FlipFlop u2/instruction_3_10 has been replicated 1 time(s)
+FlipFlop u2/instruction_3_12 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <CPU> :
+	Found 2-bit shift register for signal <u2/WB_inputdata_0>.
+	Found 2-bit shift register for signal <u2/WB_inputdata_1>.
+	Found 2-bit shift register for signal <u2/WB_inputdata_2>.
+	Found 2-bit shift register for signal <u2/WB_inputdata_3>.
+	Found 2-bit shift register for signal <u2/WB_inputdata_4>.
+	Found 2-bit shift register for signal <u2/WB_inputdata_5>.
+	Found 2-bit shift register for signal <u2/WB_inputdata_6>.
+	Found 2-bit shift register for signal <u2/WB_inputdata_7>.
+	Found 2-bit shift register for signal <u2/WB_inputdata_8>.
+	Found 2-bit shift register for signal <u2/WB_inputdata_9>.
+	Found 2-bit shift register for signal <u2/WB_inputdata_10>.
+	Found 2-bit shift register for signal <u2/WB_inputdata_11>.
+	Found 2-bit shift register for signal <u2/WB_inputdata_12>.
+	Found 2-bit shift register for signal <u2/WB_inputdata_13>.
+	Found 2-bit shift register for signal <u2/WB_inputdata_14>.
+	Found 2-bit shift register for signal <u2/WB_inputdata_15>.
+Unit <CPU> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 613
+ Flip-Flops                                            : 613
+# Shift Registers                                      : 16
+ 2-bit shift register                                  : 16
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : CPU.ngr
+Top Level Output File Name         : CPU
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 46
+
+Cell Usage :
+# BELS                             : 2547
+#      GND                         : 1
+#      INV                         : 34
+#      LUT1                        : 2
+#      LUT2                        : 98
+#      LUT2_D                      : 17
+#      LUT2_L                      : 18
+#      LUT3                        : 413
+#      LUT3_D                      : 12
+#      LUT3_L                      : 2
+#      LUT4                        : 1265
+#      LUT4_D                      : 60
+#      LUT4_L                      : 90
+#      MULT_AND                    : 1
+#      MUXCY                       : 199
+#      MUXF5                       : 128
+#      MUXF6                       : 16
+#      VCC                         : 1
+#      XORCY                       : 190
+# FlipFlops/Latches                : 629
+#      FDC                         : 2
+#      FDE                         : 148
+#      FDE_1                       : 207
+#      FDRE                        : 272
+# Shift Registers                  : 16
+#      SRL16E                      : 16
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 29
+#      IBUF                        : 10
+#      OBUF                        : 19
+# MULTs                            : 1
+#      MULT18X18SIO                : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1200efg320-5 
+
+ Number of Slices:                     1076  out of   8672    12%  
+ Number of Slice Flip Flops:            629  out of  17344     3%  
+ Number of 4 input LUTs:               2027  out of  17344    11%  
+    Number used as logic:              2011
+    Number used as Shift registers:      16
+ Number of IOs:                          46
+ Number of bonded IOBs:                  30  out of    250    12%  
+ Number of MULT18X18SIOs:                 1  out of     28     3%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 646   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+rst                                | IBUF                   | 2     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 37.736ns (Maximum Frequency: 26.500MHz)
+   Minimum input arrival time before clock: 18.195ns
+   Maximum output required time after clock: 7.298ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 37.736ns (frequency: 26.500MHz)
+  Total number of paths / destination ports: 1048290090 / 1322
+-------------------------------------------------------------------------
+Delay:               18.868ns (Levels of Logic = 40)
+  Source:            u2/instruction_3_10 (FF)
+  Destination:       u2/NPC_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk falling
+
+  Data Path: u2/instruction_3_10 to u2/NPC_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             18   0.514   1.060  u2/instruction_3_10 (u2/instruction_3_10)
+     LUT4:I0->O            1   0.612   0.000  u2/PC_or000421 (u2/PC_or00042)
+     MUXF5:I1->O          20   0.278   0.967  u2/PC_or00042_f5 (u2/alu_in1_or0000)
+     LUT3:I2->O            1   0.612   0.360  u2/PC_mux0005<10>11_SW0 (N505)
+     LUT4:I3->O           28   0.612   1.075  u2/PC_mux0005<10>11 (N2)
+     LUT4_D:I3->O         29   0.612   1.075  u2/PC_mux0006<1>21 (N204)
+     LUT4:I3->O            1   0.612   0.360  u2/PC_mux0006<4>1 (u2/PC_mux0006<4>)
+     LUT4:I3->O            1   0.612   0.000  u2/Madd_PC_share0001_lut<4> (u2/Madd_PC_share0001_lut<4>)
+     MUXCY:S->O            1   0.404   0.000  u2/Madd_PC_share0001_cy<4> (u2/Madd_PC_share0001_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  u2/Madd_PC_share0001_cy<5> (u2/Madd_PC_share0001_cy<5>)
+     MUXCY:CI->O           1   0.052   0.000  u2/Madd_PC_share0001_cy<6> (u2/Madd_PC_share0001_cy<6>)
+     MUXCY:CI->O           1   0.052   0.000  u2/Madd_PC_share0001_cy<7> (u2/Madd_PC_share0001_cy<7>)
+     MUXCY:CI->O           1   0.052   0.000  u2/Madd_PC_share0001_cy<8> (u2/Madd_PC_share0001_cy<8>)
+     MUXCY:CI->O           1   0.052   0.000  u2/Madd_PC_share0001_cy<9> (u2/Madd_PC_share0001_cy<9>)
+     MUXCY:CI->O           1   0.052   0.000  u2/Madd_PC_share0001_cy<10> (u2/Madd_PC_share0001_cy<10>)
+     MUXCY:CI->O           1   0.052   0.000  u2/Madd_PC_share0001_cy<11> (u2/Madd_PC_share0001_cy<11>)
+     MUXCY:CI->O           1   0.052   0.000  u2/Madd_PC_share0001_cy<12> (u2/Madd_PC_share0001_cy<12>)
+     MUXCY:CI->O           1   0.052   0.000  u2/Madd_PC_share0001_cy<13> (u2/Madd_PC_share0001_cy<13>)
+     MUXCY:CI->O           1   0.052   0.000  u2/Madd_PC_share0001_cy<14> (u2/Madd_PC_share0001_cy<14>)
+     XORCY:CI->O           2   0.699   0.410  u2/Madd_PC_share0001_xor<15> (u2/PC_share0001<15>)
+     LUT3:I2->O            0   0.612   0.000  u2/PC_mux0002<15>30 (u2/PC_mux0002<15>)
+     MUXCY:DI->O           1   0.773   0.000  u2/Maddsub_PC_share0000_cy<15> (u2/Maddsub_PC_share0000_cy<15>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<16> (u2/Maddsub_PC_share0000_cy<16>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<17> (u2/Maddsub_PC_share0000_cy<17>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<18> (u2/Maddsub_PC_share0000_cy<18>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<19> (u2/Maddsub_PC_share0000_cy<19>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<20> (u2/Maddsub_PC_share0000_cy<20>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<21> (u2/Maddsub_PC_share0000_cy<21>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<22> (u2/Maddsub_PC_share0000_cy<22>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<23> (u2/Maddsub_PC_share0000_cy<23>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<24> (u2/Maddsub_PC_share0000_cy<24>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<25> (u2/Maddsub_PC_share0000_cy<25>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<26> (u2/Maddsub_PC_share0000_cy<26>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<27> (u2/Maddsub_PC_share0000_cy<27>)
+     XORCY:CI->O           2   0.699   0.383  u2/Maddsub_PC_share0000_xor<28> (u2/PC_share0000<28>)
+     LUT4_D:I3->O          1   0.612   0.360  u2/PC_mux0000<28> (u2/PC_mux0000<28>)
+     LUT4:I3->O            1   0.612   0.000  u2/Mcompar_NPC_cmp_lt0000_lut<8> (u2/Mcompar_NPC_cmp_lt0000_lut<8>)
+     MUXCY:S->O            1   0.404   0.000  u2/Mcompar_NPC_cmp_lt0000_cy<8> (u2/Mcompar_NPC_cmp_lt0000_cy<8>)
+     MUXCY:CI->O           1   0.052   0.000  u2/Mcompar_NPC_cmp_lt0000_cy<9> (u2/Mcompar_NPC_cmp_lt0000_cy<9>)
+     MUXCY:CI->O          32   0.399   1.076  u2/Mcompar_NPC_cmp_lt0000_cy<10> (u2/Mcompar_NPC_cmp_lt0000_cy<10>)
+     LUT4:I3->O            1   0.612   0.000  u2/Mmux_NPC_mux0013251 (u2/NPC_mux0013<31>)
+     FDE_1:D                   0.268          u2/NPC_31
+    ----------------------------------------
+    Total                     18.868ns (11.743ns logic, 7.125ns route)
+                                       (62.2% logic, 37.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 2639405 / 823
+-------------------------------------------------------------------------
+Offset:              18.195ns (Levels of Logic = 47)
+  Source:            rst (PAD)
+  Destination:       u2/NPC_0 (FF)
+  Destination Clock: clk falling
+
+  Data Path: rst to u2/NPC_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           359   1.106   1.230  rst_IBUF (rst_IBUF)
+     LUT4:I1->O            1   0.612   0.000  u0/data<9>941 (u0/data<9>94)
+     MUXF5:I1->O           2   0.278   0.410  u0/data<9>94_f5 (alu_result<9>)
+     LUT4:I2->O            1   0.612   0.000  u0/z_flag_and0000_wg_lut<1> (u0/z_flag_and0000_wg_lut<1>)
+     MUXCY:S->O            1   0.404   0.000  u0/z_flag_and0000_wg_cy<1> (u0/z_flag_and0000_wg_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  u0/z_flag_and0000_wg_cy<2> (u0/z_flag_and0000_wg_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  u0/z_flag_and0000_wg_cy<3> (u0/z_flag_and0000_wg_cy<3>)
+     MUXCY:CI->O           2   0.288   0.410  u0/z_flag_and0000_wg_cy<4> (u0/z_flag_and0000_wg_cy<4>)
+     LUT4_D:I2->LO         1   0.612   0.130  u2/PC_or000229 (N992)
+     LUT3:I2->O            8   0.612   0.795  u2/PC_or000236 (u2/PC_or0002)
+     LUT4_D:I0->O         61   0.612   1.111  u2/PC_mux0002<10>1 (N83)
+     LUT4:I2->O            1   0.612   0.426  u2/PC_mux0002<1>31_SW1 (N317)
+     LUT4:I1->O            1   0.612   0.000  u2/Maddsub_PC_share0000_lut<1> (u2/Maddsub_PC_share0000_lut<1>)
+     MUXCY:S->O            1   0.404   0.000  u2/Maddsub_PC_share0000_cy<1> (u2/Maddsub_PC_share0000_cy<1>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<2> (u2/Maddsub_PC_share0000_cy<2>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<3> (u2/Maddsub_PC_share0000_cy<3>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<4> (u2/Maddsub_PC_share0000_cy<4>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<5> (u2/Maddsub_PC_share0000_cy<5>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<6> (u2/Maddsub_PC_share0000_cy<6>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<7> (u2/Maddsub_PC_share0000_cy<7>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<8> (u2/Maddsub_PC_share0000_cy<8>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<9> (u2/Maddsub_PC_share0000_cy<9>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<10> (u2/Maddsub_PC_share0000_cy<10>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<11> (u2/Maddsub_PC_share0000_cy<11>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<12> (u2/Maddsub_PC_share0000_cy<12>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<13> (u2/Maddsub_PC_share0000_cy<13>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<14> (u2/Maddsub_PC_share0000_cy<14>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<15> (u2/Maddsub_PC_share0000_cy<15>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<16> (u2/Maddsub_PC_share0000_cy<16>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<17> (u2/Maddsub_PC_share0000_cy<17>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<18> (u2/Maddsub_PC_share0000_cy<18>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<19> (u2/Maddsub_PC_share0000_cy<19>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<20> (u2/Maddsub_PC_share0000_cy<20>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<21> (u2/Maddsub_PC_share0000_cy<21>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<22> (u2/Maddsub_PC_share0000_cy<22>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<23> (u2/Maddsub_PC_share0000_cy<23>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<24> (u2/Maddsub_PC_share0000_cy<24>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<25> (u2/Maddsub_PC_share0000_cy<25>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<26> (u2/Maddsub_PC_share0000_cy<26>)
+     MUXCY:CI->O           1   0.051   0.000  u2/Maddsub_PC_share0000_cy<27> (u2/Maddsub_PC_share0000_cy<27>)
+     XORCY:CI->O           2   0.699   0.383  u2/Maddsub_PC_share0000_xor<28> (u2/PC_share0000<28>)
+     LUT4_D:I3->O          1   0.612   0.360  u2/PC_mux0000<28> (u2/PC_mux0000<28>)
+     LUT4:I3->O            1   0.612   0.000  u2/Mcompar_NPC_cmp_lt0000_lut<8> (u2/Mcompar_NPC_cmp_lt0000_lut<8>)
+     MUXCY:S->O            1   0.404   0.000  u2/Mcompar_NPC_cmp_lt0000_cy<8> (u2/Mcompar_NPC_cmp_lt0000_cy<8>)
+     MUXCY:CI->O           1   0.052   0.000  u2/Mcompar_NPC_cmp_lt0000_cy<9> (u2/Mcompar_NPC_cmp_lt0000_cy<9>)
+     MUXCY:CI->O          32   0.399   1.076  u2/Mcompar_NPC_cmp_lt0000_cy<10> (u2/Mcompar_NPC_cmp_lt0000_cy<10>)
+     LUT4:I3->O            1   0.612   0.000  u2/Mmux_NPC_mux0013251 (u2/NPC_mux0013<31>)
+     FDE_1:D                   0.268          u2/NPC_31
+    ----------------------------------------
+    Total                     18.195ns (11.865ns logic, 6.330ns route)
+                                       (65.2% logic, 34.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 212 / 19
+-------------------------------------------------------------------------
+Offset:              7.298ns (Levels of Logic = 4)
+  Source:            u5/q_reg_0 (FF)
+  Destination:       sseg<6> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: u5/q_reg_0 to sseg<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             14   0.514   1.002  u5/q_reg_0 (u5/q_reg_0)
+     LUT3:I0->O            1   0.612   0.000  u5/Mmux_hex_31 (u5/Mmux_hex_31)
+     MUXF5:I1->O           7   0.278   0.754  u5/Mmux_hex_2_f5_0 (u5/hex<1>)
+     LUT4:I0->O            1   0.612   0.357  u5/Mrom_sseg41 (sseg_4_OBUF)
+     OBUF:I->O                 3.169          sseg_4_OBUF (sseg<4>)
+    ----------------------------------------
+    Total                      7.298ns (5.185ns logic, 2.113ns route)
+                                       (71.0% logic, 29.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 14.63 secs
+ 
+--> 
+
+Total memory usage is 306596 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   53 (   0 filtered)
+Number of infos    :   36 (   0 filtered)
+
